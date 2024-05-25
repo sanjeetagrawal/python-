@@ -6,13 +6,13 @@ pipeline {
     stages { 
         stage('SCM Checkout') {
             steps{
-            git 'https://github.com/iccpnorthindia/jenkinproject2024.git'
+            git 'https://github.com/sanjeetagrawal/python-.git'
             }
         }
 
         stage('Build docker image') {
             steps {  
-                sh 'docker build -t iccpinfotech/iccpnew:$BUILD_NUMBER .'
+                sh 'docker build -t iccpinfotech/Vikasnew:$BUILD_NUMBER .'
             }
         }
         stage('login to dockerhub') {
@@ -22,7 +22,7 @@ pipeline {
         }
         stage('push image') {
             steps{
-                sh 'docker push iccpinfotech/iccpnew:$BUILD_NUMBER'
+                sh 'docker push iccpinfotech/Vikasnew:$BUILD_NUMBER'
             }
         }
 }
